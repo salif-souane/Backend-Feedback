@@ -1,0 +1,5 @@
+package com.cwa.springboot_app.Enums;
+
+public enum Regions {
+    DAKAR, THIÈS, SAINT_LOUIS, LOUGA, MATAM, TAMBACOUNDA, KÉDOUGOU, KOLDA, SÉDHIOU, ZIGUINCHOR, KAOLACK, FATICK, DIOURBEL, KAFFRINE
+}
