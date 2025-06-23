@@ -29,5 +29,5 @@ public class Avis {
     private com.cwa.springboot_app.Enums.Regions regions;
 
     @ManyToOne
-    private User utilisateur;
+    private User user;
 }

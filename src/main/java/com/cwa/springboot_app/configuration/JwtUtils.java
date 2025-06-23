@@ -66,9 +66,11 @@ public class JwtUtils {
     }
 
     private Claims extractAllClaims(String token) {
-        return Jwts.parser()
-                .setSigningKey(getSignKey())
-                .parseClaimsJws(token)
-                .getBody();
-    }
+    return Jwts.parserBuilder()
+            .setSigningKey(getSignKey()) // ✅ clé bien fournie ici
+            .build()
+            .parseClaimsJws(token)
+            .getBody();
+}
+
 }

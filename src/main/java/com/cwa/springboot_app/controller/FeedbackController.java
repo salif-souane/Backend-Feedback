@@ -14,6 +14,7 @@ import java.time.LocalDate;
 import java.util.List;
 
 @RestController
+@RequestMapping("/api/auth")
 @RequiredArgsConstructor
 public class FeedbackController {
 
@@ -24,8 +25,8 @@ public class FeedbackController {
     @PostMapping("/avis")
     @PreAuthorize("hasRole('USER')")
     public Avis ajouterAvis(@RequestBody Avis avis, Authentication authentication) {
-     //   User user = utilisateurRepository.findByUsername(authentication.getUsername());
-    //    avis.setUser(user);
+       User user = useRepository.findByUsername(authentication.getName());
+       avis.setUser(user);
         avis.setDate(LocalDate.now());
         return avisRepository.save(avis);
     }
